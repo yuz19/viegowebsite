@@ -3,11 +3,11 @@ function Acceuil(){
     return(
     <div className='acceuil'>
         <h1 id='titleB'>
-        <span>Ruined</span> <span>King</span>
+        <span>Ruined</span> <span>KIng</span>
         </h1>
 
        
-        <img src="./sword.png" alt='' height={500}/>
+        <img src={process.env.PUBLIC_URL+"./sword.png"} alt='' height={500}/>
     </div>
     )
 }

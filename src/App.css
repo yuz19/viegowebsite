@@ -24,7 +24,7 @@ header h1{
   font-family: 'Inspiration' ;
   color: #43C176;
   font-weight: 100;
-  font-size: 56px;
+  font-size: 56px;z-index: 999;
 } 
 nav ul{
   font-family: 'Inria Serif';
@@ -33,9 +33,15 @@ nav ul{
   gap: 100px;
 }
 nav ul li{
-  list-style-type: none;
+  list-style-type: none;z-index: 999;
 }
-nav ul li:hover{
+nav ul li a{
+  text-decoration: none;
+}
+nav ul li.active a{
+ border-bottom: 4px solid #FFFFFF;
+}
+nav ul li a:hover{
   color: #43C176;
   cursor: pointer;
 }
@@ -58,11 +64,11 @@ nav ul li:hover{
 #titleB{
   position: absolute;
   z-index: 1;
-  font-family: 'Inknut Antiqua','regular';
+  font-family: 'Inknut Antiqua';
   font-size: 300px;
    text-align: center;
 
-  font-weight: 300;
+  font-weight: 400;
  
   animation: titleB 5s ;
  
@@ -70,10 +76,12 @@ nav ul li:hover{
 }
 #titleB span{
   color: #9696962c;
+  margin: 0;
 }
-#titleB span:second-child{
+#titleB span:nth-child(2){
+  position: relative;
   animation: colorB 5s ;
-  color: #43C176;
+   
   animation-fill-mode: forwards;
 }
 @keyframes changesword {
@@ -92,18 +100,36 @@ nav ul li:hover{
 @keyframes titleB {
   0% {
     font-size: 300px;
+   
     text-align: center;
   }
   100% {
+    top: -10vh;
     font-size: 300px;
-    width: 100px;
+    width: 200px;
   }
 }
 @keyframes colorB {
   0% {
-    color: #43C176;
+     
   }
   100% {
+    left: max(15vh,140px);
+    top: max(-5vh,-50px);
     color: #43C176;
   }
+}
+.bg{
+  background-image:url("../public/bg.png");
+}
+.slider img{
+  width: 751px;
+  height: 434px;opacity: 0;
+}
+.slider{
+  
+  width: 751px;
+  height: 434px;
+  box-shadow: 10px 5px 5px red;
+  overflow: hidden;
 }
