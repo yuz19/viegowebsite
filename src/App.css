@@ -45,7 +45,7 @@ nav ul li a:hover{
   color: #43C176;
   cursor: pointer;
 }
-.acceuil{
+.acceuil,.ListeSkins{
   position: relative;
   top: 100px;
   display: flex;
@@ -127,9 +127,36 @@ nav ul li a:hover{
   height: 434px;opacity: 0;
 }
 .slider{
-  
+  position: relative;
   width: 751px;
   height: 434px;
-  box-shadow: 10px 5px 5px red;
+  box-shadow: 15px -10px 0px 1px #820609;
+ 
   overflow: hidden;
+}
+.btn-slide{
+/* background-color: #43C176;*/
+    width: 30px;
+  cursor: pointer;
+}
+.btn-slide img{
+  width: 40px;
+  background: transparent;
+}
+.ListeSkins{
+  position: relative;
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  
+}
+.ListeSkins .next{
+  position: absolute;
+  left:  100%;
+}
+.ListeSkins .prev{
+  position: absolute;
+  left:  0%;
 }

@@ -12,6 +12,7 @@ function App() {
   const location = useLocation();
   return (
     <div  className={location.pathname != '/' ? 'App bg' : 'App'}>
+      
        <NavBar></NavBar>
         
           <Routes>

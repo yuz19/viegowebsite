@@ -1,7 +1,11 @@
 import React from 'react'
 import leftArrow from './caret-left.svg'
-export default function BtnSlider(){
+import rightArrow from './caret-right.svg'
+
+export default function BtnSlider({direction,moveSlide}){
     return(
-        <div></div>
+       <div className={direction==="next" ? 'btn-slide next' : 'btn-slide prev'} onClick={moveSlide} >
+            <img src={direction==="next" ? rightArrow : leftArrow}/>
+       </div>
     )
 }
