@@ -1,41 +1,29 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
-function NavBar() {
+function NavBar({h1Color,setH1Color}) {
   const location = useLocation();
-  const [h1Color, setH1Color] = useState('#43C176');
+ 
+  const handleColorChange = () => {
+    setH1Color('#43C176');
+  };
 
-  useEffect(() => {
-    const infoSkins = document.querySelectorAll('.infoSkin');
-    infoSkins.forEach((infoSkin) => {
-      const className = infoSkin.classList;
-      if (className.length > 1) {
-        if (className.contains('Penta')) {
-          setH1Color('red');
-        } else if (className.contains('king')) {
-          setH1Color('yellow');
-        } else if (className.contains('edg')) {
-          setH1Color('blue');
-        }
-      }
-    });
-  });
 
   return (
     <header>
       <h1 style={{ color: h1Color }}>Viego</h1>
       <nav>
         <ul>
-          <li className={location.pathname === '/Story' ? 'active' : ''}>
+          <li className={location.pathname === '/Story' ? 'active' : ''} onClick={handleColorChange}>
             <Link to="/Story">Story</Link>
           </li>
-          <li className={location.pathname === '/Build' ? 'active' : ''}>
+          <li className={location.pathname === '/Build' ? 'active' : ''} onClick={handleColorChange}>
             <Link to="/Build">Build</Link>
           </li>
-          <li className={location.pathname === '/Skins' ? 'active' : ''}>
+          <li className={location.pathname === '/Skins' ? 'active' : ''} onClick={()=>{setH1Color("blue")}}>
             <Link to="/Skins">Skins</Link>
           </li>
-          <li className={location.pathname === '/Update' ? 'active' : ''}>
+          <li className={location.pathname === '/Update' ? 'active' : ''} onClick={handleColorChange}>
             <Link to="/Update">Update Informations</Link>
           </li>
         </ul>
